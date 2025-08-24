@@ -1,0 +1,64 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+.eggs/
+*.egg
+
+# --- Virtual Environments ---
+.venv/
+venv/
+env/
+ENV/
+.Python
+
+# --- IDE / Editor Files ---
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- Logs & Outputs ---
+*.log
+*.out
+*.tmp
+
+# --- Data / IO Files ---
+*.db
+*.sqlite
+*.sqlite3
+*.csv
+*.tsv
+*.json
+*.xml
+*.yaml
+*.yml
+*.h5
+*.pkl
+
+# --- Archives ---
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# --- Jupyter Notebook ---
+.ipynb_checkpoints/
+
+# --- Build / Distribution ---
+build/
+dist/
+*.spec

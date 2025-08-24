@@ -1,0 +1,365 @@
+
+:root{
+    --Main-font: 'Garamond', sans-serif;
+    --Submain-font: 'Figtree', sans-serif;
+
+    --white-txt: #fff;
+    --hightlight: #D5BB93;
+    --highttxt: #1a73e8;
+
+
+    --green: rgb(192, 255, 20);
+    --dark-rgb:  rgba(255, 255, 255, 0.377);
+    --dark-0: #a8a8a8a8;
+
+}
+
+
+@font-face {
+    font-family: 'Garamond';
+    src: url('../fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('../fonts/Figtree/Figtree-VariableFont_wght.ttf') format('truetype');
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--Main-font);
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+}
+
+.main-bg{
+
+    background-image: url('../images/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.blur-bg{
+    backdrop-filter: blur(8px);
+}
+
+#stars-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+.stars{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.star{
+    position: absolute;
+    background: rgba(255, 255, 255, 0.377);
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    animation: blink 2s infinite;
+    opacity: 0.8;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.8;}
+    50% { opacity: 0.2;}
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 50, 0.3);
+    z-index: 0;
+}
+
+.header-wrp {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    /* background-color: #121212;
+    border-bottom: 1px solid #363636; */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and name */
+    color: white;
+}
+
+.menu-icon {
+    font-size: 1.4rem; /* adjust for SVG later */
+    cursor: pointer;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+.explore-btn a{
+    /* color: inherit; */
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.explore-btn.cursor-pointer {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    z-index: 1;
+}
+
+
+.btn-order{
+    width: 100px;
+    height: 34px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    border-radius: 16px;
+    font-weight: 500;
+
+}
+
+.login-btn {
+    color: white;               /* text color */
+    background-color: #121212;  /* background */
+    font-weight: 600;           /* semi-bold */
+    font-family: 'Poppins', sans-serif; /* optional custom font */
+}
+
+.secondary-btn {
+    color: #121212;
+    width: 120px;
+    background-color: #D5BB93;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+.home-container {
+    min-height: 100vh; 
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;   
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    text-align: center; 
+}
+
+/* Chat Home */
+
+.Chathome-container{
+    width: 64rem;
+    height: 24rem;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 10px;
+    align-items: center;
+}
+
+.welcome-msg{
+    font-family: var(--Submain-font);
+    color: white;
+    letter-spacing: 1px;
+}
+
+.welcome-msg .main-title h2{
+    font-size: 2.5rem;
+    font-family: var(--Main-font);
+
+    margin-bottom: 0.5rem;
+    color: #D5BB93;
+}
+
+
+.most-views-topic {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.sub-text .sub-title{
+    font-family: var(--Submain-font);
+    color: rgba(255, 255, 255, 0.5);
+    width: 40rem;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.topic {
+    background: transparent;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    border: 1px solid #363636;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.topic:hover {
+    background: #D5BB93;
+    color: #121212;
+}
+
+
+
+
+.chat-wrp {
+  width: 60%;
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 0.5rem;
+  margin-top: 1rem;
+  background-color: #121212;
+  padding: 0.5rem;
+  border-radius: 12px;
+}
+
+.msg {
+  min-height: 1.5rem;
+  max-height: 8rem;
+  overflow-y: auto;
+text-align: left;      /* align text to the left */
+  vertical-align: top; 
+  background: transparent;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+  margin: 0;
+  outline: none;
+}
+
+.msg:empty:before {
+  content: attr(placeholder);
+  color: #999;
+  pointer-events: none;
+}
+
+.send-btn {
+  align-self: flex-end; 
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+
+
+.send-btn:hover{
+    color: #D5BB93;
+}
+
+
+
+
+
+/* From Uiverse.io by vinodjangid07 */ 
+.button {
+  width: 110px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background-color: var(--hightlight);
+  border-radius: 30px;
+  color: rgb(19, 19, 19);
+  font-weight: 600;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+  transition-duration: .5s;
+  z-index: 999;
+}
+
+.svgIcon {
+  height: 25px;
+  transition-duration: 1.5s;
+  /* fill: var(); */
+}
+
+.bell path {
+  fill: var(--highttxt);
+}
+
+
+.button:active {
+  transform: scale(0.97);
+  transition-duration: .2s;
+}
+
+.button:hover{
+    border: 1.5px solid var(--green);
+    transition: 0.2s ease-in-out;
+}
+
+.button:hover .svgIcon {
+  transform: rotate(250deg);
+  transition-duration: 1.5s;
+}
+

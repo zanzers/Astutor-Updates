@@ -1,0 +1,48 @@
+{% extends 'based.html' %}
+{% set namespace = 'home' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block chatHome %}
+
+<div class="Chathome-container">
+
+    <div class="welcome-msg">
+      <div class="main-title"><h2>Astutor</h2></div>
+      <span class="sub-title">
+
+        <div class="sub-text">
+            <span class="sub-title">We provide the simplest solutions to your learning needs.<br>
+    From connecting you with the best tutors to guiding your self-study.
+    <br>Astutor is here to help you grow, learn, and succeed.</span>
+        </div>
+
+      </span>
+    </div>
+
+
+    <div class="chat-wrp">
+  <p class="msg" contenteditable="true" placeholder="Type your message..."></p>
+  <button class="cursor-pointer  send-btn">➤</button>
+</div>
+
+
+
+
+    <div class="most-views-topic">
+        <span class="topic">Math</span>
+        <span class="topic">Science</span>
+        <span class="topic">English</span>
+        <span class="topic">History</span>
+        <span class="topic">Programming</span>
+        <span class="topic">More</span>
+    </div>
+</div>
+
+
+</div>
+
+
+
+{% endblock %}
