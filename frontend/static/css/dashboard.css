@@ -7,6 +7,7 @@
     --bg-color-dark: #12121d;
     --bg-color-darkSurface: #282828;
     --textHight: #c09c7b;
+    --textNormal: #fff;
 }
 
 
@@ -43,9 +44,8 @@ body {
 
 .parent {
     display: grid;
-    grid-template-columns: 1fr 4fr; 
+    grid-template-columns: 1fr 6fr; 
     grid-template-rows: 80px 1fr;  
-    gap: 8px;
     height: 100%;
 
 }
@@ -77,10 +77,72 @@ body {
 
 
 .div2 {
-    grid-column: 2; /* goes to content column */
-    grid-row: 1;   /* stays in header row */
-    /* background: green; */
+    grid-column: 2;
+    grid-row: 1;   
+    top: 100px;
+    display: flex;
 }
+
+.header-content {
+    color: var(--textNormal);
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 32px; 
+}
+
+.header-list_wrp{
+    display: flex;
+    gap: 20px; 
+    cursor: pointer;
+}
+
+.header-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    right: 80px;
+}
+
+.header-list_wrp a {
+    text-decoration: none;
+}
+
+.header-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.9rem;
+}
+
+.header-list_wrp a span{
+    color: var(--textNormal);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.dot-header{
+    width: 8px;
+    height: 8px;
+    background-image: url('../images/dot.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.header-list_wrp a.active-link span{
+  color: var(--textHight); 
+  font-weight: 600;         
+}
+
+
+
 
 .div3 {
     grid-column: 2; /* content column */
