@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Astutor{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1>Welcome back, !</h1>
+        <p class="dashboard-subtitle">
+           
+        </p>
+    </div>
+
+    <div class="dashboard-grid">
+        <!-- Quick Stats -->
+        <div class="dashboard-card stats-card">
+            <h3><i class="fas fa-chart-bar"></i> Quick Stats</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">
+                       
+                    </span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.8</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24</span>
+                    <span class="stat-label">Hours Learned</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="dashboard-card activity-card">
+            <h3><i class="fas fa-clock"></i> Recent Activity</h3>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <i class="fas fa-book"></i>
+                    <div class="activity-content">
+                        <p>Mathematics session completed</p>
+                        <span class="activity-time">2 hours ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-star"></i>
+                    <div class="activity-content">
+                        <p>Received 5-star rating</p>
+                        <span class="activity-time">1 day ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-calendar"></i>
+                    <div class="activity-content">
+                        <p>New session scheduled</p>
+                        <span class="activity-time">2 days ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Sessions -->
+        <div class="dashboard-card sessions-card">
+            <h3><i class="fas fa-calendar-alt"></i> Upcoming Sessions</h3>
+            <div class="sessions-list">
+                <div class="session-item">
+                    <div class="session-info">
+                        <h4>Physics - Quantum Mechanics</h4>
+                        <p>with Dr. Sarah Johnson</p>
+                        <span class="session-time">
+                            <i class="fas fa-clock"></i> Today, 3:00 PM
+                        </span>
+                    </div>
+                    <button class="btn btn-sm btn-primary">Join</button>
+                </div>
+                <div class="session-item">
+                    <div class="session-info">
+                        <h4>Mathematics - Calculus</h4>
+                        <p>with Prof. Michael Chen</p>
+                        <span class="session-time">
+                            <i class="fas fa-clock"></i> Tomorrow, 10:00 AM
+                        </span>
+                    </div>
+                    <button class="btn btn-sm btn-secondary">Reschedule</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="dashboard-card actions-card">
+            <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+            <div class="actions-grid">
+             
+                    <button class="action-btn">
+                        <i class="fas fa-plus"></i>
+                        <span>Create Session</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-users"></i>
+                        <span>View Students</span>
+                    </button>
+             
+                    <button class="action-btn">
+                        <i class="fas fa-search"></i>
+                        <span>Find Tutor</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Book Session</span>
+                    </button>
+         
+                <button class="action-btn">
+                    <i class="fas fa-message"></i>
+                    <span>Messages</span>
+                </button>
+                <button class="action-btn">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
