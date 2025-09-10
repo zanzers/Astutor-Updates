@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/_root.css') }}">
+
+
+    <title>{% block title %}Astutor | Online Tutoring in Palawan{% endblock %}</title>
+</head>
+
+<body data-barba="wrapper">
+
+  <div data-barba="container" data-barba-namespace="{{ namespace }}">
+
+  {% block navbar %}
+
+  {% endblock %}
+
+
+    {% block content %}
+    
+    {% endblock %}
+  </div>
+
+
+
+  
+
+    <script src="{{ url_for('static', filename='js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
