@@ -1,0 +1,164 @@
+:root {
+  /* Sunny Sunset Light Mode */
+  --background-color-lg: linear-gradient(135deg, #2D1B1B 0%, #4A2C2C 25%, #6B3E37 50%, #8B4513 75%, #A0522D 100%);
+  --surface-color-lg: rgba(45, 27, 27, 0.85);
+  --primary-color-lg: #FF6B35;
+  --secondary-color-lg: #a74e1a;
+  --variant-color-lg: #FF8C42;
+  --text-color-lg: #F5F5F5;
+  --button-color-lg: #FF6B35;
+  --accent-color-lg: #ac9411;
+
+  /* Dark Sunset Dark Mode */
+  --background-color-dk: linear-gradient(135deg, #1A1A2E 0%, #16213E 25%, #0F3460 50%, #533483 75%, #7209B7 100%);
+  --surface-color-dk: rgba(26, 26, 46, 0.9);
+  --primary-color-dk: #FF6B35;
+  --secondary-color-dk: #38154e;
+  --variant-color-dk: #533483;
+  --text-color-dk: #E8E8E8;
+  --button-color-dk: #FF6B35;
+  --accent-color-dk: #FFD700;
+}
+
+/* Apply theme variables */
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--surface-color) !important;
+  color: var(--text-color) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.navbar .nav-link {
+  color: var(--text-color) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.navbar .nav-link:hover {
+  color: var(--primary-color) !important;
+  transform: translateY(-2px);
+}
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background: var(--primary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary-color), var(--variant-color)) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.btn-primary:hover {
+  background: linear-gradient(45deg, var(--variant-color), var(--primary-color)) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: #fff !important;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color) !important;
+  border: 2px solid var(--primary-color) !important;
+  background: transparent !important;
+  font-weight: 600;
+  padding: 8px 23px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.btn-outline-primary:hover {
+  background: linear-gradient(45deg, var(--primary-color), var(--variant-color)) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  border-color: transparent !important;
+}
+
+/* Cards */
+.card {
+  background: var(--surface-color);
+  color: var(--text-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+.contact-footer-section {
+  background: var(--surface-color);
+  color: var(--text-color);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Social icons */
+.social-icons a {
+  color: var(--text-color) !important;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.social-icons a:hover {
+  color: var(--primary-color) !important;
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* Additional gradient effects */
+.gradient-text {
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--primary-color), var(--variant-color)) 1;
+}
+
+/* Logo enhancement */
+.navbar-brand img {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+}
+

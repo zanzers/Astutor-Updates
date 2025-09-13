@@ -1,13 +1,114 @@
-{% extends 'base.html' %}
-{% set namespace = 'home' %}
+{% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
-
+{% block title %}Astutor - Find Tutors{% endblock %}
 
 {% block content %}
+    <section class="hero-section text-center py-5">
+        <h1 class="display-4 fw-bold mb-4">Connect with trusted tutors near you</h1>
+        <a href="#" class="btn btn-primary btn-lg">Find a Tutor</a>
+    </section>
 
-<h1>Welcome to Astutor</h1>
+    <section class="key-features-section py-5">
+        <h2 class="text-center mb-4">Key Features</h2>
+        <div class="row text-center g-4">
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <i class="bi bi-shield-check display-4 mb-3"></i>
+                    <p class="mb-0">Verified</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <i class="bi bi-star-fill display-4 mb-3"></i>
+                    <p class="mb-0">Ratings</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <i class="bi bi-calendar-check-fill display-4 mb-3"></i>
+                    <p class="mb-0">Flexible scheduling</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <i class="bi bi-chat-dots-fill display-4 mb-3"></i>
+                    <p class="mb-0">Secure messaging</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="testimonials-section py-5">
+        <h2 class="text-center mb-4">Testimonial Tutors</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p>"Astutor helped me find the perfect math tutor!"</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0">
+                            Sarah K.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p>"Astutor helped me find the perfect math tutor!"</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0">
+                            Sarah K.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p>"Astutor helped me find the perfect math tutor!"</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0">
+                            Sarah K.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
+    <section class="contact-footer-section py-5">
+        <h2 class="text-center mb-4">Featured Tutors</h2>
+        <div class="row text-center g-4 mb-5">
+            <div class="col-md-3">
+                <img src="https://via.placeholder.com/150" class="rounded-circle mb-2" alt="Tutor 1">
+                <p>Drew Wakelled</p>
+            </div>
+            <div class="col-md-3">
+                <img src="https://via.placeholder.com/150" class="rounded-circle mb-2" alt="Tutor 2">
+                <p>Jhon Clarence</p>
+            </div>
+            <div class="col-md-3">
+                <img src="https://via.placeholder.com/150" class="rounded-circle mb-2" alt="Tutor 3">
+                <p>Ricky 1</p>
+            </div>
+            <div class="col-md-3">
+                <img src="https://via.placeholder.com/150" class="rounded-circle mb-2" alt="Tutor 4">
+                <p>Ricky 2</p>
+            </div>
+        </div>
+        <hr>
+        <div class="contact-details text-center pt-4">
+            <h3 class="mb-3">Contact Details</h3>
+            <p>Email: example@astutor.com</p>
+            <div class="social-icons">
+                <a href="#" class="me-2 text-dark"><i class="bi bi-facebook fs-4"></i></a>
+                <a href="#" class="me-2 text-dark"><i class="bi bi-twitter fs-4"></i></a>
+                <a href="#" class="text-dark"><i class="bi bi-instagram fs-4"></i></a>
+            </div>
+        </div>
+    </section>
 {% endblock %}

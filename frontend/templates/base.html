@@ -3,32 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Astutor{% endblock %}</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/_root.css') }}">
 
 
-    <title>{% block title %}Astutor | Online Tutoring in Palawan{% endblock %}</title>
 </head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='images/logo_lg.png') }}" alt="Astutor Logo" class="d-inline-block align-text-top" id="logoImage" style="height: 100px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Find Tutor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Become a Tutor</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <!-- Dark Mode Toggle -->
+                    <button class="btn btn-link nav-link me-2" id="darkModeToggle">
+                        <i class="bi bi-sun" id="darkModeIcon"></i>
+                    </button>
+                    <!-- Auth Buttons -->
+                    <a href="#" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="#" class="btn btn-primary">Signup</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<body data-barba="wrapper">
+    <!-- Page Content -->
+    <main class="container-fluid py-5">
+        {% block content %}{% endblock %}
+    </main>
 
-  <div data-barba="container" data-barba-namespace="{{ namespace }}">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Dark Mode Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeIcon = document.getElementById('darkModeIcon');
+        const logoImage = document.getElementById('logoImage');
+        const root = document.documentElement;
 
-  {% block navbar %}
+        // Check for saved theme
+        let currentTheme = localStorage.getItem('theme') || 'light';
 
-  {% endblock %}
+        const applyTheme = (theme) => {
+            if (theme === 'dark') {
+                root.style.setProperty('--primary-color', 'var(--primary-color-dk)');
+                root.style.setProperty('--secondary-color', 'var(--secondary-color-dk)');
+                root.style.setProperty('--variant-color', 'var(--variant-color-dk)');
+                root.style.setProperty('--background-color', 'var(--background-color-dk)');
+                root.style.setProperty('--surface-color', 'var(--surface-color-dk)');
+                root.style.setProperty('--text-color', 'var(--text-color-dk)');
+                root.style.setProperty('--accent-color', 'var(--accent-color-dk)');
+                darkModeIcon.classList.remove('bi-sun');
+                darkModeIcon.classList.add('bi-moon-fill');
+                // Switch to dark logo
+                logoImage.src = "{{ url_for('static', filename='images/logo-dk.png') }}";
+            } else {
+                root.style.setProperty('--primary-color', 'var(--primary-color-lg)');
+                root.style.setProperty('--secondary-color', 'var(--secondary-color-lg)');
+                root.style.setProperty('--variant-color', 'var(--variant-color-lg)');
+                root.style.setProperty('--background-color', 'var(--background-color-lg)');
+                root.style.setProperty('--surface-color', 'var(--surface-color-lg)');
+                root.style.setProperty('--text-color', 'var(--text-color-lg)');
+                root.style.setProperty('--accent-color', 'var(--accent-color-lg)');
+                darkModeIcon.classList.remove('bi-moon-fill');
+                darkModeIcon.classList.add('bi-sun');
+                // Switch to light logo
+                logoImage.src = "{{ url_for('static', filename='images/logo_lg.png') }}";
+            }
+        };
 
+        // Initial theme
+        applyTheme(currentTheme);
 
-    {% block content %}
-    
-    {% endblock %}
-  </div>
-
-
-
-  
-
-    <script src="{{ url_for('static', filename='js/jquery-3.7.1.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-
+        // Toggle listener
+        darkModeToggle.addEventListener('click', () => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            localStorage.setItem('theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+    });
+    </script>
 </body>
 </html>
