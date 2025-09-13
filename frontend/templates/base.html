@@ -17,7 +17,7 @@
     <!-- Navbar -->
     <header class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="{{ url_for('public_routes.home') }}">
                 <img src="{{ url_for('static', filename='images/logo_lg.png') }}" alt="Astutor Logo" class="d-inline-block align-text-top" id="logoImage" style="height: 100px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -25,8 +25,8 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('public_routes.home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('public_routes.about') }}">About</a></li> 
                     <li class="nav-item"><a class="nav-link" href="#">Find Tutor</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Become a Tutor</a></li>
                 </ul>
