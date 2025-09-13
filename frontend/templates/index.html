@@ -1,13 +1,116 @@
-{% extends 'base.html' %}
-{% set namespace = 'home' %}
+{% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
-
+{% block title %}Astutor - Find Tutors{% endblock %}
 
 {% block content %}
+    <section class="hero-section text-center py-5">
+        <h1 class="display-4 fw-bold mb-4">Connect with trusted tutors near you</h1>
+        <a href="#" class="btn btn-primary btn-lg">Find a Tutor</a>
+    </section>
 
-<h1>Welcome to Astutor</h1>
+    <section class="key-features-section py-5">
+        <h2 class="text-center mb-4">Key Features</h2>
+        <div class="row text-center g-4">
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <i class="bi bi-shield-check display-4 mb-3"></i>
+                    <p class="mb-0">Verified</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <i class="bi bi-star-fill display-4 mb-3"></i>
+                    <p class="mb-0">Ratings</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <i class="bi bi-calendar-check-fill display-4 mb-3"></i>
+                    <p class="mb-0">Flexible scheduling</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <i class="bi bi-chat-dots-fill display-4 mb-3"></i>
+                    <p class="mb-0">Secure messaging</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="testimonials-section py-5">
+        <h2 class="text-center mb-4">Testimonial Tutors</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p>"Astutor helped me find the perfect math tutor!"</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0">
+                            Sarah K.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p>"Astutor helped me find the perfect math tutor!"</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0">
+                            Sarah K.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p>"Astutor helped me find the perfect math tutor!"</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0">
+                            Sarah K.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
+    <section class="featured-tutors-section py-5">
+        <h2 class="text-center mb-4">Featured Tutors</h2>
+        <div class="row text-center g-4">
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3 mx-auto" alt="Tutor 1" style="width: 120px; height: 120px; object-fit: cover;">
+                    <h5 class="mb-2">Drew Wakelled</h5>
+                    <p class="text-muted mb-0">Mathematics Tutor</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3 mx-auto" alt="Tutor 2" style="width: 120px; height: 120px; object-fit: cover;">
+                    <h5 class="mb-2">Jhon Clarence</h5>
+                    <p class="text-muted mb-0">Science Tutor</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3 mx-auto" alt="Tutor 3" style="width: 120px; height: 120px; object-fit: cover;">
+                    <h5 class="mb-2">Ricky 1</h5>
+                    <p class="text-muted mb-0">English Tutor</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3 mx-auto" alt="Tutor 4" style="width: 120px; height: 120px; object-fit: cover;">
+                    <h5 class="mb-2">Ricky 2</h5>
+                    <p class="text-muted mb-0">History Tutor</p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
