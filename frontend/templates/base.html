@@ -18,7 +18,7 @@
     <header class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url_for('public_routes.home') }}">
-                <img src="{{ url_for('static', filename='images/logo_lg.png') }}" alt="Astutor Logo" class="d-inline-block align-text-top" id="logoImage" style="height: 100px;">
+                <img src="{{ url_for('static', filename='images/logo_lg.png') }}" alt="Astutor Logo" class="d-inline-block align-text-top" id="logoImage" style="height: 50px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -43,8 +43,6 @@
         </div>
     </header>
 
-    <!-- Background Image Container -->
-    <div id="backgroundContainer" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background: url('{{ url_for('static', filename='images/bg_lg.jpg') }}') center center fixed; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;"></div>
     
     <!-- Page Content -->
     <main class="container-fluid py-5">
@@ -70,17 +68,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Dark Mode Script -->
     <script>
-        // Set image URLs from Flask
-        const lightBgUrl = "{{ url_for('static', filename='images/bg_lg.jpg') }}";
-        const darkBgUrl = "{{ url_for('static', filename='images/bg_dk.jpg') }}";
-    </script>
-    <script>
     document.addEventListener('DOMContentLoaded', () => {
         const darkModeToggle = document.getElementById('darkModeToggle');
         const darkModeIcon = document.getElementById('darkModeIcon');
         const logoImage = document.getElementById('logoImage');
         const root = document.documentElement;
-        const backgroundContainer = document.getElementById('backgroundContainer');
 
         // Check for saved theme
         let currentTheme = localStorage.getItem('theme') || 'light';
@@ -100,18 +92,6 @@
         };
 
         const applyTheme = (theme) => {
-            // Update background container
-            if (theme === 'dark') {
-                backgroundContainer.style.background = `url("${darkBgUrl}") center center fixed`;
-                backgroundContainer.style.backgroundSize = 'cover';
-                backgroundContainer.style.backgroundRepeat = 'no-repeat';
-                backgroundContainer.style.backgroundAttachment = 'fixed';
-            } else {
-                backgroundContainer.style.background = `url("${lightBgUrl}") center center fixed`;
-                backgroundContainer.style.backgroundSize = 'cover';
-                backgroundContainer.style.backgroundRepeat = 'no-repeat';
-                backgroundContainer.style.backgroundAttachment = 'fixed';
-            }
             
             if (theme === 'dark') {
                 root.style.setProperty('--primary-color', 'var(--primary-color-dk)');
@@ -170,18 +150,6 @@
         // Initial theme
         applyTheme(currentTheme);
         
-        // Set initial background
-        if (currentTheme === 'dark') {
-            backgroundContainer.style.background = `url("${darkBgUrl}") center center fixed`;
-            backgroundContainer.style.backgroundSize = 'cover';
-            backgroundContainer.style.backgroundRepeat = 'no-repeat';
-            backgroundContainer.style.backgroundAttachment = 'fixed';
-        } else {
-            backgroundContainer.style.background = `url("${lightBgUrl}") center center fixed`;
-            backgroundContainer.style.backgroundSize = 'cover';
-            backgroundContainer.style.backgroundRepeat = 'no-repeat';
-            backgroundContainer.style.backgroundAttachment = 'fixed';
-        }
 
         // Toggle listener
         darkModeToggle.addEventListener('click', () => {
@@ -190,14 +158,6 @@
             applyTheme(currentTheme);
         });
 
-        // Parallax zoom effect on scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = scrolled * 0.1;
-            const zoom = 1 + (scrolled * 0.0004); 
-            
-            backgroundContainer.style.transform = `translateY(${parallax}px) scale(${zoom})`;
-        });
     });
     </script>
 </body>

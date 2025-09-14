@@ -27,13 +27,19 @@ html {
 }
 
 body {
-  background: transparent !important;
+  background: linear-gradient(180deg, #87CEEB 0%, #98FB98 50%, #90EE90 100%) !important;
   color: #2D1B1B;
   min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark mode background */
+[data-theme="dark"] body {
+  background: linear-gradient(180deg, #2C1810 0%, #1A1A2E 50%, #0F1419 100%) !important;
+  color: #E8E8E8;
 }
 
 /* Remove default backgrounds from main containers */
@@ -66,6 +72,8 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 60px;
+  height: 60px;
 }
 
 /* Ensure navbar text is always visible */
@@ -305,6 +313,104 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transform: scale(1.2);
   }
+}
+
+/* Hero Section Styling */
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-radius: 20px;
+  margin: 20px;
+  padding: 40px;
+}
+
+.hero-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.hero-image-container:hover img {
+  transform: scale(1.05);
+}
+
+.hero-section .lead {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+/* Featured Tutors Carousel Styling */
+#tutorsCarousel .carousel-control-prev,
+#tutorsCarousel .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background: var(--surface-color);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+#tutorsCarousel .carousel-control-prev:hover,
+#tutorsCarousel .carousel-control-next:hover {
+  opacity: 1;
+  background: var(--primary-color);
+  transform: translateY(-50%) scale(1.1);
+}
+
+#tutorsCarousel .carousel-control-prev {
+  left: -25px;
+}
+
+#tutorsCarousel .carousel-control-next {
+  right: -25px;
+}
+
+#tutorsCarousel .carousel-control-prev-icon,
+#tutorsCarousel .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+}
+
+#tutorsCarousel .carousel-indicators {
+  bottom: -50px;
+}
+
+#tutorsCarousel .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--surface-color);
+  border: 2px solid var(--primary-color);
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+#tutorsCarousel .carousel-indicators button.active {
+  background-color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+/* Remove hover animation from Featured Tutors cards */
+#tutorsCarousel .card:hover {
+  transform: none;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Smooth color transitions for all elements */
