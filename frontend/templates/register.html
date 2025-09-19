@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .login-container {
+      background: rgba(255,255,255,0.95);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+      padding: 40px 48px 32px 48px;
+      max-width: 650px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
+    .astutor-logo {
+      width: 250px;
+    }
+    .astutor-text {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #444;
+      letter-spacing: 1px;
+      vertical-align: middle;
+      margin-bottom: 0px;
+      margin-top: 8px;
+    }
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+    }
+    .register-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 18px 0 24px 0;
+      color: #444;
+    }
+    .form-control {
+      border-radius: 10px;
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+      padding: 12px 16px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #fff;
+      color: #222;
+      border: 1.5px solid #7abaff;
+    }
+    .btn-login {
+      background: linear-gradient(90deg, #1e90ff 0%, #00c6ff 100%);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      width: 180px;
+      margin: 0 16px 0 0;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(30,144,255,0.15);
+      border: none;
+      transition: background 0.2s;
+    }
+    .btn-login:hover {
+      background: linear-gradient(90deg, #00c6ff 0%, #1e90ff 100%);
+    }
+    .register-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8px;
+      gap: 0;
+    }
+    .register-link-right {
+      font-size: 1rem;
+      color: #ccc;
+      width: 220px;
+      text-align: left;
+      white-space: nowrap;
+      margin-left: 10px;
+    }
+    .register-link-right a {
+      color: #7abaff;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .register-link-right a:hover {
+      text-decoration: underline;
+    }
+    /* DARK MODE */
+    .dark-mode-toggle {
+      position: fixed;
+      top: 32px;
+      right: 48px;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+      background: transparent;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 26px;
+      margin-right: 10px;
+    }
+    .switch input { display: none; }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #007bff;
+      border-radius: 26px;
+      transition: background 0.2s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      bottom: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+    input:checked + .slider {
+      background: #007bff;
+    }
+    input:checked + .slider:before {
+      transform: translateX(22px);
+    }
+    .dark-mode-label {
+      color: #222;
+      font-size: 1.3rem;
+      font-family: inherit;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    body.dark-mode .dark-mode-label {
+      color: #fff;
+    }
+    /* DARK MODE STYLES */
+    body.dark-mode {
+      background: #181b20;
+    }
+    body.dark-mode .login-container {
+      background: rgba(30,32,36,0.95);
+      color: #fff;
+      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.4);
+    }
+    body.dark-mode .astutor-text,
+    body.dark-mode .register-title {
+      color: #fff;
+    }
+    body.dark-mode .form-control {
+      background: #23262b;
+      color: #fff;
+      border: 1px solid #7abaff;
+    }
+    body.dark-mode .form-control::placeholder {
+      color: #bbb;
+    }
+    body.dark-mode .btn-login {
+      color: #fff;
+    }
+    body.dark-mode .register-link-right {
+      color: #ccc;
+    }
+    body.dark-mode .register-link-right a {
+      color: #7abaff;
+    }
+    body.dark-mode .astutor-logo {
+  filter: brightness(0) invert(1);
+}
+    @media (max-width: 600px) {
+      .login-container {
+        padding: 24px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dark-mode-toggle">
+    <label class="switch">
+      <input type="checkbox" id="darkModeSwitch">
+      <span class="slider"></span>
+    </label>
+    <span class="dark-mode-label" id="darkModeLabel">Dark Mode</span>
+  </div>
+  <div class="login-container">
+    <div class="logo-row">
+      <img src="logo.png" alt="astutor logo" class="astutor-logo">
+    </div>
+    <div class="register-title">Create Your Account!</div>
+    <form>
+      <input type="email" class="form-control" placeholder="Email Address" required>
+      <input type="password" class="form-control" placeholder="Password" required>
+      <input type="password" class="form-control" placeholder="Confirm Password" required>
+      <div class="text-center mb-2">
+        <button type="submit" class="btn btn-login">Sign Up</button>
+      </div>
+      <div class="text-center mt-2" style="font-size:1rem; color:#ccc;">
+        Already have an account? <a href="login.html" style="color:#7abaff; text-decoration:none; font-size:1rem;">Log In</a>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+  // DARK MODE BUTTON
+  const darkSwitch = document.getElementById('darkModeSwitch');
+  const darkLabel = document.getElementById('darkModeLabel');
+  function updateLabel() {
+    if (document.body.classList.contains('dark-mode')) {
+      darkLabel.textContent = 'Light Mode';
+      darkLabel.style.color = '#fff';
+    } else {
+      darkLabel.textContent = 'Dark Mode';
+      darkLabel.style.color = '#222';
+    }
+  }
+  darkSwitch.addEventListener('change', function() {
+    document.body.classList.toggle('dark-mode', this.checked);
+    updateLabel();
+  });
+  updateLabel();
+</script>
+</html>
