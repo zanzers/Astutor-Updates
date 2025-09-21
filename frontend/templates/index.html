@@ -3,13 +3,26 @@
 {% block title %}Astutor - Find Tutors{% endblock %}
 
 {% block content %}
-    <section class="hero-section text-center py-5">
-        <h1 class="display-4 fw-bold mb-4">Connect with trusted tutors near you</h1>
-        <a href="#" class="btn btn-primary btn-lg">Find a Tutor</a>
+    <section class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4 text-start">Connect with trusted tutors near you</h1>
+                    <p class="lead mb-4 text-start">Find the perfect tutor for your learning journey. Get personalized help from verified experts in any subject.</p>
+                    <a href="#" class="btn btn-primary btn-lg">Find a Tutor →</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image-container">
+                        <img src="{{ url_for('static', filename='images/ban.jpg') }}" alt="Students learning with tutors" class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+
     <section class="key-features-section py-5">
-        <h2 class="text-center mb-4">Key Features</h2>
+        <h2 class="text-start mb-4">Key Features</h2>
         <div class="row text-center g-4">
             <div class="col-md-3">
                 <div class="card p-4">
@@ -39,16 +52,16 @@
     </section>
 
     <section class="testimonials-section py-5">
-        <h2 class="text-center mb-4">Testimonial Tutors</h2>
+        <h2 class="text-start mb-4">Testimonial Tutors</h2>
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="card p-4">
                     <figure>
                         <blockquote class="blockquote">
-                            <p>"Astutor helped me find the perfect math tutor!"</p>
+                            <p>"Studying accounting has been very overwhelming, but Astutor connected me with the right help."</p>
                         </blockquote>
                         <figcaption class="blockquote-footer mb-0">
-                            Sarah K.
+                           Ella T.
                         </figcaption>
                     </figure>
                 </div>
@@ -57,10 +70,10 @@
                 <div class="card p-4">
                     <figure>
                         <blockquote class="blockquote">
-                            <p>"Astutor helped me find the perfect math tutor!"</p>
+                            <p>"My confidence in public speaking grew after Astutor helped me connect with an amazing tutor."</p>
                         </blockquote>
                         <figcaption class="blockquote-footer mb-0">
-                            Sarah K.
+                           Emma S.
                         </figcaption>
                     </figure>
                 </div>
@@ -69,7 +82,7 @@
                 <div class="card p-4">
                     <figure>
                         <blockquote class="blockquote">
-                            <p>"Astutor helped me find the perfect math tutor!"</p>
+                            <p>I was nervous about  calculus, but Astutor helped me find the right tutor to guide and help me."</p>
                         </blockquote>
                         <figcaption class="blockquote-footer mb-0">
                             Sarah K.
@@ -82,34 +95,58 @@
 
     <section class="featured-tutors-section py-5">
         <h2 class="text-center mb-4">Featured Tutors</h2>
-        <div class="row text-center g-4">
-            <div class="col-md-3">
-                <div class="card p-4">
-                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3 mx-auto" alt="Tutor 1" style="width: 120px; height: 120px; object-fit: cover;">
-                    <h5 class="mb-2">Drew Wakelled</h5>
-                    <p class="text-muted mb-0">Mathematics Tutor</p>
+        <div class="container">
+            <div id="tutorsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#tutorsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#tutorsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card p-4">
-                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3 mx-auto" alt="Tutor 2" style="width: 120px; height: 120px; object-fit: cover;">
-                    <h5 class="mb-2">Jhon Clarence</h5>
-                    <p class="text-muted mb-0">Science Tutor</p>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row text-center g-4">
+                            <div class="col-md-6">
+                                <div class="card p-4">
+                                    <img src="{{ url_for('static', filename='images/drew.jpg') }}" class="rounded-circle mb-3 mx-auto" alt="Tutor 1" style="width: 120px; height: 120px; object-fit: cover;">
+                                    <h5 class="mb-2">Drew Wakelled</h5>
+                                    <p class="text-muted mb-0">Mathematics Tutor</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-4">
+                                    <img src="{{ url_for('static', filename='images/clang.jpg') }}" class="rounded-circle mb-3 mx-auto" alt="Tutor 2" style="width: 120px; height: 120px; object-fit: cover;">
+                                    <h5 class="mb-2">Jhon Clarence</h5>
+                                    <p class="text-muted mb-0">Science Tutor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row text-center g-4">
+                            <div class="col-md-6">
+                                <div class="card p-4">
+                                    <img src="{{ url_for('static', filename='images/rick1.jpg') }}" class="rounded-circle mb-3 mx-auto" alt="Tutor 3" style="width: 120px; height: 120px; object-fit: cover;">
+                                    <h5 class="mb-2">Ricky 1</h5>
+                                    <p class="text-muted mb-0">English Tutor</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-4">
+                                    <img src="{{ url_for('static', filename='images/cl.jpg') }}" class="rounded-circle mb-3 mx-auto" alt="Tutor 4" style="width: 120px; height: 120px; object-fit: cover;">
+                                    <h5 class="mb-2">Ricky 2</h5>
+                                    <p class="text-muted mb-0">History Tutor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card p-4">
-                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3 mx-auto" alt="Tutor 3" style="width: 120px; height: 120px; object-fit: cover;">
-                    <h5 class="mb-2">Ricky 1</h5>
-                    <p class="text-muted mb-0">English Tutor</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card p-4">
-                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3 mx-auto" alt="Tutor 4" style="width: 120px; height: 120px; object-fit: cover;">
-                    <h5 class="mb-2">Ricky 2</h5>
-                    <p class="text-muted mb-0">History Tutor</p>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#tutorsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#tutorsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
