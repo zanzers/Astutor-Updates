@@ -211,7 +211,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid #ffffff !important;
 }
 
-
+/* Light mode only hover effect for navbar login button */
 [data-theme="light"] .navbar .btn-outline-primary:hover {
   background: rgba(255, 255, 255, 0.28) !important;
   color: #1e1e1e !important;
@@ -422,11 +422,13 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.2);
 }
 
+/* Remove hover animation from Featured Tutors cards */
 #tutorsCarousel .card:hover {
   transform: none;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), 0 4px 15px rgba(0, 0, 0, 0.15);
   border-color: rgba(255, 255, 255, 0.2);
 }
+
 
 * {
   transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
@@ -435,3 +437,83 @@ h1, h2, h3, h4, h5, h6 {
               border-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
               box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Glassmorphism buttons: Login, Signup, Find Tutor */
+/* Base glass style */
+.navbar .btn-primary,
+.navbar .btn-outline-primary,
+.hero-section .btn-primary {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Light mode tuning */
+[data-theme="light"] .navbar .btn-primary,
+[data-theme="light"] .navbar .btn-outline-primary,
+[data-theme="light"] .hero-section .btn-primary {
+  background: rgba(255, 255, 255, 0.28) !important;
+  color: #1e1e1e !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  text-shadow: none;
+}
+
+/* Dark mode tuning */
+[data-theme="dark"] .navbar .btn-primary,
+[data-theme="dark"] .navbar .btn-outline-primary,
+[data-theme="dark"] .hero-section .btn-primary {
+  background: rgba(255, 255, 255, 0.10) !important;
+  color: #E8E8E8 !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  padding: 8px 20px;
+  min-width: 120px;
+  height: 40px;
+  line-height: 24px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Hover states (slightly brighter glass) */
+.navbar .btn-primary:hover,
+.navbar .btn-outline-primary:hover,
+.hero-section .btn-primary:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.38) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .navbar .btn-primary:hover,
+[data-theme="dark"] .navbar .btn-outline-primary:hover,
+[data-theme="dark"] .hero-section .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* Light mode: lighter glass + equal sizing for Login/Signup */
+[data-theme="light"] .navbar .btn-primary,
+[data-theme="light"] .navbar .btn-outline-primary {
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #1e1e1e !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  padding: 8px 20px;
+  min-width: 120px;
+  height: 40px;
+  line-height: 24px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Light mode hover kept subtle and consistent */
+[data-theme="light"] .navbar .btn-primary:hover,
+[data-theme="light"] .navbar .btn-outline-primary:hover {
+  background: rgba(255, 255, 255, 0.30) !important;
+  color: #1e1e1e !important;
+  border-color: rgba(0, 0, 0, 0.10) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
