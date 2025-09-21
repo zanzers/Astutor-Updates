@@ -3,7 +3,7 @@
 
   --background-color-lg: #FFE5B4;
   --surface-color-lg: rgba(45, 27, 27, 0.7);
-  --primary-color-lg: #FF6B35;
+  --primary-color-lg: #fd632b;
   --secondary-color-lg: #FFB347;
   --variant-color-lg: #FF8C42;
   --text-color-lg: #ffffff;
@@ -438,7 +438,6 @@ h1, h2, h3, h4, h5, h6 {
               box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Glassmorphism buttons: Login, Signup, Find Tutor */
 /* Base glass style */
 .navbar .btn-primary,
 .navbar .btn-outline-primary,
@@ -515,5 +514,18 @@ h1, h2, h3, h4, h5, h6 {
   border-color: rgba(0, 0, 0, 0.10) !important;
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* About page styling - darker text in light mode */
+[data-theme="light"] .card .card-title,
+[data-theme="light"] .card .card-text,
+[data-theme="light"] .card .lead {
+  color: #2c2c2c !important;
+}
+
+/* Remove hover glow effects */
+[data-theme="light"] .card:hover {
+  transform: none !important;
+  box-shadow: var(--card-shadow) !important;
 }
 

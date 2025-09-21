@@ -10,7 +10,7 @@ template_loader = ChoiceLoader([
 
 app.jinja_loader = template_loader
 
-app.register_blueprint(public_routes)
+app.register_blueprint(public_routes, url_prefix='')
 
 
 if __name__ == "__main__":
